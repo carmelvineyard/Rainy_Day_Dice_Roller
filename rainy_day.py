@@ -1,5 +1,6 @@
 import random
 import turtle
+import time
 
 window = turtle.Screen()
 window.bgcolor("maroon")
@@ -49,7 +50,7 @@ pen20.hideturtle()
 pen20.goto(200, 0)
 pen20.write("D20", align="center", font=("Verdana", 24, "normal"))
 
-
+#The Dice
 #D4
 d4 = turtle.Turtle()
 d4.speed(0)
@@ -78,3 +79,41 @@ d20.color("white")
 d20.shapesize(stretch_wid=2,stretch_len=2)
 d20.penup()
 d20.goto(200, 0)
+
+
+#Keyboard bindings
+window.listen()
+window.onkeypress(roll_d4, "4")
+window.onkeypress(roll_d6, "6")
+window.onkeypress(roll_d20, "0")
+window.onkeypress(reset, "c")
+
+
+
+#Generating the random dice rolls
+
+def roll_d4():
+    rand_d4 = random.randint(1, 4)
+    time.sleep(2)
+    return rand_d4
+
+def roll_d6():
+    rand_d6 = random.randint(1, 6)
+    time.sleep(2)
+    return rand_d4
+
+def roll_d20():
+    rand_d20 = random.randint(1, 20)
+    time.sleep(2)
+    return rand_d20
+
+def reset():
+    pen4.write("D4", align="center", font=("Verdana", 24, "normal"))
+    pen6.write("D6", align="center", font=("Verdana", 24, "normal"))
+    pen20.write("D20", align="center", font=("Verdana", 24, "normal"))
+
+
+
+
+
+
